@@ -22,7 +22,7 @@ export default function Wordle({ solution }) {
     return () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, [handleKeyUp, isCorrect, turn]);
+  }, [handleKeyUp, isCorrect, turn, solution]);
 
   const sixLetters = () => {
     if (solution.length === 6) {
