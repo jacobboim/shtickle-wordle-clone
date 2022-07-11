@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
-
+import axios from "axios";
 export default function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/letters")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setLetters(json);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:3001/letters")
-      .then((res) => res.json())
+    axios
+      .get("./data/db.json")
+      .then((res) => res.data.letters)
       .then((json) => {
         setLetters(json);
       });
