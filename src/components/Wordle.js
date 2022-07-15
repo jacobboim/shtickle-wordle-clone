@@ -14,19 +14,28 @@ export default function Wordle({ solution, letters }) {
 
     if (isCorrect) {
       console.log("you won");
-      setTimeout(() => {
-        setShowModal(true);
-      }, 2000);
+      // setTimeout(() => {
+      //   setShowModal(true);
+      // }, 2000);
       window.removeEventListener("keyup", handleKeyUp);
     }
 
-    if (turn > solution.length) {
+    if (solution.length === 6 && turn > 5) {
       setTimeout(() => {
         setShowModal(true);
       }, 2000);
       console.log("out of turns");
       window.removeEventListener("keyup", handleKeyUp);
     }
+
+    if (turn > solution.length) {
+      // setTimeout(() => {
+      //   setShowModal(true);
+      // }, 2000);
+      console.log("out of turns");
+      window.removeEventListener("keyup", handleKeyUp);
+    }
+
     return () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
@@ -35,6 +44,9 @@ export default function Wordle({ solution, letters }) {
   const sixLetters = () => {
     if (solution.length === 6) {
       return <div>This is a 6 letter word</div>;
+    }
+    if (solution.length === 5) {
+      return <div>This is a 5 letter word</div>;
     }
   };
 

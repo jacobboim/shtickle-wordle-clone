@@ -24,22 +24,22 @@ export default function Keypad({ usedKeys, handleKeyUps, solution }) {
       });
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("keyup", handleKeyUp);
+  // useEffect(() => {
+  //   window.addEventListener("keyup", handleKeyUp);
 
-    if (isCorrect) {
-      console.log("you won");
-      window.removeEventListener("keyup", handleKeyUp);
-    }
+  //   if (isCorrect) {
+  //     console.log("you won");
+  //     window.removeEventListener("keyup", handleKeyUp);
+  //   }
 
-    if (turn > solution.length) {
-      setTimeout(() => {}, 2000);
-      window.removeEventListener("keyup", handleKeyUp);
-    }
-    return () => {
-      window.removeEventListener("keyup", handleKeyUp);
-    };
-  }, [handleKeyUp, isCorrect, turn, solution]);
+  //   if (turn > solution.length) {
+  //     setTimeout(() => {}, 2000);
+  //     window.removeEventListener("keyup", handleKeyUp);
+  //   }
+  //   return () => {
+  //     window.removeEventListener("keyup", handleKeyUp);
+  //   };
+  // }, [handleKeyUp, isCorrect, turn, solution]);
   const handleClick = (e) => {
     const key = e.target.innerText;
     handleKeyUp(key);
