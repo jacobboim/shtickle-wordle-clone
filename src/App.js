@@ -24,16 +24,9 @@ function App() {
       });
   }, [setSolution]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("./data/db.json")
-  //     .then((res) => console.log(res.data.solutions))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   return (
     <div className="App">
-      <h1>Wordle (Lingo)</h1>
+      <h1>Shtickle (Wordle Clone)</h1>
       {solution && <Wordle solution={solution} />}
     </div>
   );

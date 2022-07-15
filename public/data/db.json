@@ -30,11 +30,183 @@
   "solutions": [
     {
       "id": 1,
-      "word": "ninja"
+      "word": "kugel"
     },
     {
       "id": 2,
-      "word": "spades"
+      "word": "latke"
+    },
+    {
+      "id": 3,
+      "word": "zimun"
+    },
+    {
+      "id": 4,
+      "word": "zemer"
+    },
+    {
+      "id": 5,
+      "word": "keter"
+    },
+    {
+      "id": 6,
+      "word": "kotel"
+    },
+    {
+      "id": 7,
+      "word": "sfard"
+    },
+    {
+      "id": 8,
+      "word": "licht"
+    },
+    {
+      "id": 9,
+      "word": "shteig"
+    },
+    {
+      "id": 10,
+      "word": "shtick"
+    },
+    {
+      "id": 11,
+      "word": "shtark"
+    },
+    {
+      "id": 12,
+      "word": "tanya"
+    },
+    {
+      "id": 13,
+      "word": "chasid"
+    },
+    {
+      "id": 14,
+      "word": "mamesh"
+    },
+    {
+      "id": 15,
+      "word": "kofer"
+    },
+    {
+      "id": 16,
+      "word": "sugya"
+    },
+    {
+      "id": 17,
+      "word": "shver"
+    },
+    {
+      "id": 18,
+      "word": "gemara"
+    },
+    {
+      "id": 19,
+      "word": "eitza"
+    },
+    {
+      "id": 20,
+      "word": "gevalt"
+    },
+    {
+      "id": 21,
+      "word": "torah"
+    },
+    {
+      "id": 22,
+      "word": "oyvey"
+    },
+    {
+      "id": 23,
+      "word": "nuuuu"
+    },
+    {
+      "id": 24,
+      "word": "shmuz"
+    },
+    {
+      "id": 25,
+      "word": "bupkis"
+    },
+    {
+      "id": 26,
+      "word": "daven"
+    },
+    {
+      "id": 27,
+      "word": "kvetch"
+    },
+    {
+      "id": 28,
+      "word": "litvak"
+    },
+    {
+      "id": 29,
+      "word": "mazel"
+    },
+    {
+      "id": 30,
+      "word": "mensch"
+    },
+    {
+      "id": 31,
+      "word": "minyan"
+    },
+    {
+      "id": 32,
+      "word": "naches"
+    },
+    {
+      "id": 33,
+      "word": "pareve"
+    },
+    {
+      "id": 34,
+      "word": "schlep"
+    },
+    {
+      "id": 35,
+      "word": "schlub"
+    },
+    {
+      "id": 36,
+      "word": "shiker"
+    },
+    {
+      "id": 37,
+      "word": "shiksa"
+    },
+    {
+      "id": 38,
+      "word": "shtetl"
+    },
+    {
+      "id": 39,
+      "word": "shtibl"
+    },
+    {
+      "id": 40,
+      "word": "shvitz"
+    },
+    {
+      "id": 41,
+      "word": "shpiel"
+    },
+    {
+      "id": 42,
+      "word": "tuchus"
+    },
+    {
+      "id": 43,
+      "word": "kippah"
+    },
+    {
+      "id": 44,
+      "word": "bissel"
+    },
+    {
+      "id": 45,
+      "word": "bubbe"
     }
   ]
 }
