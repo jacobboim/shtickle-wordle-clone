@@ -41,6 +41,9 @@ export default function Wordle({ solution, letters }) {
   return (
     <div>
       {/* Wordle solution = {solution} */}
+
+      {console.log(solution)}
+
       <div style={{ fontSize: " 25px" }}>{sixLetters()}</div>
       {/* <div>Current Guess - {currentGuess}</div> */}
       <Grid
