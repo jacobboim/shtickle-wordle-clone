@@ -4,6 +4,7 @@ import Wordle from "./components/Wordle";
 import axios from "axios";
 function App() {
   const [solution, setSolution] = useState(null);
+  const [clicked, setClicked] = useState("");
 
   // useEffect(() => {
   //   fetch("http://localhost:3001/solutions")
@@ -24,9 +25,12 @@ function App() {
       });
   }, [setSolution]);
 
+  // console.log(clicked);
+
   return (
     <div className="App">
       <h1>Shtickle (Wordle Clone)</h1>
+      {/* <button onClick={() => setClicked("hello")}>clickme</button> */}
       {solution && <Wordle solution={solution} />}
     </div>
   );

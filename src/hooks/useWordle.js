@@ -10,6 +10,16 @@ const useWordle = (solution) => {
 
   // format a guess into an array of letter objects
   // e.g. [{key: 'a', color: 'yellow'}]
+
+  const newGame = () => {
+    setTurn(0);
+    setCurrentGuess("");
+    setGuesses([...Array(6)]);
+    setHistory([]);
+    setIsCorrect(false);
+    setUsedKeys({});
+  };
+
   const formatGuess = () => {
     let solutionArray = [...solution];
     let formatedGuess = [...currentGuess].map((l) => {
@@ -108,7 +118,15 @@ const useWordle = (solution) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyUp };
+  return {
+    turn,
+    currentGuess,
+    guesses,
+    isCorrect,
+    usedKeys,
+    handleKeyUp,
+    newGame,
+  };
 };
 
 export default useWordle;

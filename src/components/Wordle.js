@@ -4,8 +4,15 @@ import Grid from "./Grid";
 import Keypad from "./Keypad";
 import Modal from "./Modal";
 export default function Wordle({ solution, letters }) {
-  const { currentGuess, handleKeyUp, guesses, isCorrect, turn, usedKeys } =
-    useWordle(solution);
+  const {
+    currentGuess,
+    handleKeyUp,
+    guesses,
+    isCorrect,
+    turn,
+    usedKeys,
+    newGame,
+  } = useWordle(solution);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -14,9 +21,9 @@ export default function Wordle({ solution, letters }) {
 
     if (isCorrect) {
       console.log("you won");
-      // setTimeout(() => {
-      //   setShowModal(true);
-      // }, 2000);
+      setTimeout(() => {
+        setShowModal(true);
+      }, 2000);
       window.removeEventListener("keyup", handleKeyUp);
     }
 
@@ -29,9 +36,9 @@ export default function Wordle({ solution, letters }) {
     }
 
     if (turn > solution.length) {
-      // setTimeout(() => {
-      //   setShowModal(true);
-      // }, 2000);
+      setTimeout(() => {
+        setShowModal(true);
+      }, 2000);
       console.log("out of turns");
       window.removeEventListener("keyup", handleKeyUp);
     }
@@ -55,6 +62,8 @@ export default function Wordle({ solution, letters }) {
       {/* Wordle solution = {solution} */}
 
       {console.log(solution)}
+
+      {/* <button onClick={newGame}>click me</button> */}
 
       <div style={{ fontSize: " 25px" }}>{sixLetters()}</div>
       {/* <div>Current Guess - {currentGuess}</div> */}
