@@ -4,16 +4,15 @@ import useWordle from "../hooks/useWordle";
 
 export default function Keypad({ usedKeys, handleKeyUps, solution }) {
   const [letters, setLetters] = useState(null);
-  const { currentGuess, handleKeyUp, guesses, isCorrect, turn } =
-    useWordle(solution);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/letters")
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       setLetters(json);
-  //     });
-  // }, []);
+  const {
+    currentGuess,
+    handleKeyUp,
+    guesses,
+    isCorrect,
+    turn,
+    setCurrentGuess,
+    handleKeyUpKeyboard,
+  } = useWordle(solution);
 
   useEffect(() => {
     axios
@@ -43,20 +42,42 @@ export default function Keypad({ usedKeys, handleKeyUps, solution }) {
   const handleClick = (e) => {
     const key = e.target.innerText;
     handleKeyUp(key);
+    setCurrentGuess(key);
+    console.log(key);
+    console.log(currentGuess, "currentGuess");
+  };
+  const alphabet = ["A", "B", "C"];
 
+  const handleKeyUpKeyboards = (e) => {
+    const key = e.target.innerText;
+    // handleKeyUp(key);
+    handleKeyUpKeyboard(key);
+
+    // setCurrentGuess(key);
     console.log(key);
   };
+
+  const handleEnter = (e) => {
+    if (e.target.innerText === "Enter") {
+      handleKeyUp(e);
+      setCurrentGuess((prev) => prev + e);
+      console.log(e, " you clicked enter");
+      // setCurrentGuess("");
+    }
+  };
+
   return (
     <div className="keypad">
       {letters &&
         letters.map((l) => {
           const color = usedKeys[l.key];
           return (
-            <div key={l.key} className={color} onClick={handleClick}>
-              {l.key}
+            <div key={l.key} className={color}>
+              <button onClick={handleKeyUpKeyboards}>{l.key}</button>
             </div>
           );
         })}
+      <button onClick={handleEnter}>Enter</button>
     </div>
   );
 }

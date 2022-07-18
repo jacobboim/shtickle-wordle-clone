@@ -18,6 +18,59 @@ const useWordle = (solution) => {
     setHistory([]);
     setIsCorrect(false);
     setUsedKeys({});
+    // getNewWord();
+  };
+
+  const getNewWord = () => {
+    const words = [
+      "kugel",
+      "latke",
+      "zimun",
+      "zemer",
+      "keter",
+      "kotel",
+      "sfard",
+      "licht",
+      "shteig",
+      "shtick",
+      "shtark",
+      "tanya",
+      "chasid",
+      "mamesh",
+      "kofer",
+      "sugya",
+      "shver",
+      "gemara",
+      "eitza",
+      "gevalt",
+      "torah",
+      "oyvey",
+      "shmuz",
+      "bupkis",
+      "punkt",
+      "daven",
+      "kvetch",
+      "litvak",
+      "mazel",
+      "mensch",
+      "minyan",
+      "naches",
+      "pareve",
+      "schlep",
+      "schlub",
+      "shiker",
+      "shiksa",
+      "shtetl",
+      "shtibl",
+      "shvitz",
+      "shpiel",
+      "tuchus",
+      "kippah",
+      "bissel",
+      "bubbe",
+      "shpitz",
+    ];
+    return words[Math.floor(Math.random() * words.length)];
   };
 
   const formatGuess = () => {
@@ -118,6 +171,39 @@ const useWordle = (solution) => {
     }
   };
 
+  // handle keyup event & track current guess
+  // if user presses enter, add the new guess
+  const handleKeyUpKeyboard = (key) => {
+    if (key === "Enter") {
+      // only add guess if turn is less than 5
+      if (turn > solution.length) {
+        console.log("you used all your guesses!");
+        return;
+      }
+      // do not allow duplicate words
+      if (history.includes(currentGuess)) {
+        console.log("you already tried that word.");
+        return;
+      }
+      // check word is 5 chars
+      if (currentGuess.length !== solution.length) {
+        console.log("word must be 5 chars.");
+        return;
+      }
+      const formattedGuess = formatGuess();
+      addNewGuess(formattedGuess);
+    }
+    if (key === "Backspace") {
+      setCurrentGuess((prev) => prev.slice(0, -1));
+      return;
+    }
+    if (/^[A-Za-z]$/.test(key)) {
+      if (currentGuess.length < solution.length) {
+        setCurrentGuess((prev) => prev + key);
+      }
+    }
+  };
+
   return {
     turn,
     currentGuess,
@@ -126,6 +212,9 @@ const useWordle = (solution) => {
     usedKeys,
     handleKeyUp,
     newGame,
+    getNewWord,
+    setCurrentGuess,
+    handleKeyUpKeyboard,
   };
 };
 

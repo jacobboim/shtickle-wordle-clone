@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Wordle from "./components/Wordle";
 import axios from "axios";
+import useWordle from "./hooks/useWordle";
 function App() {
   const [solution, setSolution] = useState(null);
   const [clicked, setClicked] = useState("");
+  const { getNewWord, newGame } = useWordle(solution);
+  const [newGameClick, setNewGameClick] = useState(false);
 
   // useEffect(() => {
-  //   fetch("http://localhost:3001/solutions")
-  //     .then((res) => res.json())
+  //   axios
+  //     .get("./data/db.json")
+  //     .then((res) => res.data.solutions)
   //     .then((json) => {
   //       const randomSolution = json[Math.floor(Math.random() * json.length)];
   //       setSolution(randomSolution.word);
@@ -16,21 +20,24 @@ function App() {
   // }, [setSolution]);
 
   useEffect(() => {
-    axios
-      .get("./data/db.json")
-      .then((res) => res.data.solutions)
-      .then((json) => {
-        const randomSolution = json[Math.floor(Math.random() * json.length)];
-        setSolution(randomSolution.word);
-      });
-  }, [setSolution]);
+    setSolution(getNewWord());
+  });
 
-  // console.log(clicked);
+  const newGames = () => {
+    setTimeout(() => {
+      setNewGameClick(true);
+      setNewGameClick(false);
+    }, 100);
+  };
+
+  const handleNewGame = () => {
+    newGame();
+  };
 
   return (
     <div className="App">
       <h1>Shtickle (Wordle Clone)</h1>
-      {/* <button onClick={() => setClicked("hello")}>clickme</button> */}
+
       {solution && <Wordle solution={solution} />}
     </div>
   );

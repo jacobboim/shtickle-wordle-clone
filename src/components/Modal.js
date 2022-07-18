@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Modal({ isCorrect, turn, solution }) {
+export default function Modal({
+  isCorrect,
+  turn,
+  solution,
+  newGame,
+  setNewGameClick,
+}) {
+  // useEffect(() => {
+  //   setSolution(getNewWord());
+  // }, [newGame]);
+
+  // const [newGameClick, setNewGameClick] = useState(false);
+
+  // const newGames = () => {
+  //   setTimeout(() => {
+  //     setNewGameClick(true);
+  //     setNewGameClick(false);
+  //   }, 100);
+  // };
+
+  const handleNewGame = () => {
+    setNewGameClick(true);
+  };
+
   return (
     <div className="modal">
       {isCorrect && (
@@ -9,6 +32,9 @@ export default function Modal({ isCorrect, turn, solution }) {
 
           <p className="solution">{solution} </p>
           <p>You found the solution in {turn} guesses</p>
+          <button onClick={() => window.location.reload(false)}>
+            Play Again
+          </button>
         </div>
       )}
 
@@ -17,6 +43,9 @@ export default function Modal({ isCorrect, turn, solution }) {
           <h1> You Lost</h1>
           <p className="solution">{solution} </p>
           <p>Try again with a new word!!!</p>
+          <button onClick={() => window.location.reload(false)}>
+            Play Again
+          </button>
         </div>
       )}
     </div>
