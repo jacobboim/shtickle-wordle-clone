@@ -122,7 +122,7 @@ export default function Wordle({ solution }) {
 
   return (
     <div>
-      Wordle solution = {solution}
+      {/* Wordle solution = {solution} */}
       {/* {console.log(solution)} */}
       {/* <button onClick={newGame}>click worlde</button> */}
       <div style={{ fontSize: " 25px" }}>{sixLetters()}</div>

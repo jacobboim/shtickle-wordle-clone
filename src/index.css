@@ -323,13 +323,13 @@ h1 {
   }
 
   .firstRow > div.green {
-    width: 33px;
+    width: 30px;
   }
   .firstRow > div.yellow {
-    width: 33px;
+    width: 30px;
   }
   .firstRow > div.grey {
-    width: 33px;
+    width: 30px;
   }
 
   .secondRow > div.green {
@@ -354,7 +354,7 @@ h1 {
   }
   .firstRow > div {
     background-color: #eee;
-    width: 33px;
+    width: 30px;
   }
 
   .secondRow {
@@ -407,6 +407,7 @@ h1 {
   }
   h1 {
     padding: 10px 0;
+    margin: 0 0 4px 0;
   }
 
   .mobileSubmit {
