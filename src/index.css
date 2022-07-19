@@ -361,6 +361,9 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  .nightModeImg {
+    top: -48px;
+  }
   .thirdRow {
     margin: 5px;
     width: 93%;
