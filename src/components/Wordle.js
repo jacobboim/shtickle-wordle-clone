@@ -4,8 +4,9 @@ import Grid from "./Grid";
 import Keypad from "./Keypad";
 import Modal from "./Modal";
 import axios from "axios";
+import nightMode from "../images/nightss.png";
 
-export default function Wordle({ solution }) {
+export default function Wordle({ solution, nightModes }) {
   const {
     currentGuess,
     handleKeyUp,
@@ -121,7 +122,13 @@ export default function Wordle({ solution }) {
   };
 
   return (
-    <div>
+    <div
+    // style={
+    //   nightModes === true
+    //     ? { backgroundColor: "red" }
+    //     : { backgroundColor: "yellow" }
+    // }
+    >
       {/* Wordle solution = {solution} */}
       {/* {console.log(solution)} */}
       {/* <button onClick={newGame}>click worlde</button> */}
