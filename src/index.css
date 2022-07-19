@@ -364,6 +364,12 @@ h1 {
   .nightModeImg {
     top: -48px;
   }
+  .row {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: var(--text-primary);
+  }
   .thirdRow {
     margin: 5px;
     width: 93%;
@@ -374,6 +380,7 @@ h1 {
     line-height: 50px;
     max-width: 500px;
     margin: 0px auto;
+    color: var(--button-text);
   }
 
   .thirdRow > div.green {
@@ -393,6 +400,11 @@ h1 {
     width: 30px;
   }
   .firstRow > div.grey {
+    width: 30px;
+  }
+  .firstRow > div {
+    background-color: var(--button-background);
+
     width: 30px;
   }
 
@@ -416,10 +428,6 @@ h1 {
     max-width: 500px;
     margin: 15px auto;
   }
-  .firstRow > div {
-    background-color: #eee;
-    width: 30px;
-  }
 
   .secondRow {
     width: 100%;
@@ -432,7 +440,7 @@ h1 {
     margin: 15px auto;
   }
   .secondRow > div {
-    background-color: #eee;
+    background-color: var(--button-background);
     width: 33px;
   }
   .Enter {
@@ -461,6 +469,7 @@ h1 {
     background-color: #eee;
     padding: 12px;
     width: 63%;
+    background-color: var(--button-background);
   }
 
   .backTextMobile {
@@ -468,6 +477,7 @@ h1 {
     background-color: #eee;
     padding: 12px;
     width: 63%;
+    background-color: var(--button-background);
   }
   h1 {
     padding: 10px 0;
