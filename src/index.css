@@ -4,18 +4,71 @@ body {
   font-family: verdana;
   margin: 0;
 }
+
+:root {
+  --background: white;
+  --text-primary: black;
+  --text-secondary: royalblue;
+  --accent: purple;
+  --button-text: black;
+  --button-background: #eee;
+  --main-title: black;
+  --key-frame-border-color: #bbb;
+}
+[data-theme="dark"] {
+  --background: #10172a;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: darkred;
+  --button-text: white;
+  --button-background: #475569;
+  --main-title: white;
+  --key-frame-border-color: white;
+}
+
+.changeBack {
+  background-color: var(--background);
+}
+
+.letterWord {
+  font-size: 2em;
+  color: var(--text-primary);
+}
+
+.changeBack {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  transition: all 0.5s;
+}
+button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  /* float: center; */
+  transition: all 0.5s;
+}
+
+.nightModeImg {
+  width: 42px;
+  position: relative;
+  top: -26px;
+  left: 168px;
+}
+
 h1 {
   font-size: 1.2em;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-  margin: 0 0 30px 0;
-  color: #333;
+  margin: 0 0 -27px 0;
+  color: var(--main-title);
 }
 
 .row {
   text-align: center;
   display: flex;
   justify-content: center;
+  color: var(--text-primary);
 }
 .row > div {
   display: block;
@@ -104,9 +157,10 @@ h1 {
   line-height: 50px;
   max-width: 500px;
   margin: 20px auto;
+  color: var(--button-text);
 }
 .firstRow > div {
-  background-color: #eee;
+  background-color: var(--button-background);
 
   width: 40px;
 }
@@ -140,10 +194,11 @@ h1 {
   line-height: 50px;
   max-width: 500px;
   margin: 20px auto;
+  color: var(--button-text);
 }
 .secondRow > div {
-  background-color: #eee;
-
+  /* background-color: #eee; */
+  background-color: var(--button-background);
   width: 40px;
 }
 
@@ -176,11 +231,13 @@ h1 {
   line-height: 50px;
   max-width: 500px;
   /* margin: 20px auto; */
+  color: var(--button-text);
 
   margin: 0px -6px 20px 20px;
 }
 .thirdRow > div {
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: var(--button-background);
 
   width: 40px;
 }
@@ -213,7 +270,9 @@ h1 {
 
 .enterText {
   font-size: 20px;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: var(--button-background);
+
   padding: 12px;
 }
 
@@ -221,11 +280,13 @@ h1 {
   position: relative;
   left: 21px;
   bottom: 11px;
+  color: var(--button-text);
 }
 
 .backSpaceWidth {
   position: relative;
   bottom: 11px;
+  color: var(--button-text);
 }
 
 .modal {
@@ -295,7 +356,7 @@ h1 {
   }
   100% {
     transform: scale(1);
-    border-color: #333;
+    border-color: var(--key-frame-border-color);
   }
 }
 

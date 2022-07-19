@@ -5,8 +5,10 @@ import Keypad from "./Keypad";
 import Modal from "./Modal";
 import axios from "axios";
 import nightMode from "../images/nightss.png";
+import whiteSun from "../images/whiteSun.jpg";
+import useLocalStorage from "use-local-storage";
 
-export default function Wordle({ solution, nightModes }) {
+export default function Wordle({ solution, nightModes, setThemeMode }) {
   const {
     currentGuess,
     handleKeyUp,
@@ -26,6 +28,20 @@ export default function Wordle({ solution, nightModes }) {
   const [lettersFirstRow, setLettersFirstRow] = useState(null);
   const [lettersSecondRow, setLettersSecondRow] = useState(null);
   const [lettersThirdRow, setLettersThirdRow] = useState(null);
+  // const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // const [theme, setTheme] = useLocalStorage(
+  //   "theme",
+  //   defaultDark ? "dark" : "light"
+  // );
+
+  const [themeMode, setThemeModes] = useState("light");
+
+  const switchTheme = (e) => {
+    e.preventDefault();
+    const newTheme = themeMode === "light" ? "dark" : "light";
+    setThemeModes(newTheme);
+    // setThemeMode(newTheme);
+  };
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyUp);
@@ -122,17 +138,20 @@ export default function Wordle({ solution, nightModes }) {
   };
 
   return (
-    <div
-    // style={
-    //   nightModes === true
-    //     ? { backgroundColor: "red" }
-    //     : { backgroundColor: "yellow" }
-    // }
-    >
+    <div className="changeBack" data-theme={themeMode}>
       {/* Wordle solution = {solution} */}
+      <h1>Shtickle (Wordle Clone)</h1>
+
+      <img
+        className="nightModeImg"
+        src={themeMode === "light" ? nightMode : whiteSun}
+        onClick={switchTheme}
+      />
       {/* {console.log(solution)} */}
       {/* <button onClick={newGame}>click worlde</button> */}
-      <div style={{ fontSize: " 25px" }}>{sixLetters()}</div>
+      <div className="letterWord" style={{ fontSize: " 25px" }}>
+        {sixLetters()}
+      </div>
       {/* <div>Current Guess - {currentGuess}</div> */}
       <Grid
         currentGuess={currentGuess}
