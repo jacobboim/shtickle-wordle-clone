@@ -28,10 +28,10 @@ export default function Modal({
     <div className="modal">
       {isCorrect && (
         <div>
-          <h1> You Win!!!</h1>
+          <h2> You Win!!!</h2>
 
           <p className="solution">{solution} </p>
-          <p>You found the solution in {turn} guesses</p>
+          <p className="youWon">You found the solution in {turn} guesses</p>
           <button onClick={() => window.location.reload(false)}>
             Play Again
           </button>

@@ -14,6 +14,7 @@ body {
   --button-background: #eee;
   --main-title: black;
   --key-frame-border-color: #bbb;
+  --play-again: black;
 }
 [data-theme="dark"] {
   --background: #10172a;
@@ -24,8 +25,12 @@ body {
   --button-background: #475569;
   --main-title: white;
   --key-frame-border-color: white;
+  --play-again: black;
 }
 
+.youWon {
+  color: black;
+}
 .changeBack {
   background-color: var(--background);
 }
@@ -42,11 +47,23 @@ body {
   transition: all 0.5s;
 }
 button {
-  color: var(--text-primary);
+  /* color: var(--text-primary);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
-  /* float: center; */
+  transition: all 0.5s; */
+  /* background-color: var(--background); */
+  border: 2px var(--text-primary) solid;
   transition: all 0.5s;
+  /* background-color: #bbb; */
+  all: unset;
+  border: 5px #10172a solid;
+  padding: 5px;
+  color: var(--play-again);
+  cursor: pointer;
+}
+
+h2 {
+  color: #000;
 }
 
 .nightModeImg {

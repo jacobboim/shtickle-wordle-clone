@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import axios from "axios";
 import nightMode from "../images/nightss.png";
 import whiteSun from "../images/whiteSun.jpg";
+import whiteSunTwo from "../images/whiteSunTwo.png";
 import useLocalStorage from "use-local-storage";
 
 export default function Wordle({ solution, nightModes, setThemeMode }) {
@@ -28,18 +29,18 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   const [lettersFirstRow, setLettersFirstRow] = useState(null);
   const [lettersSecondRow, setLettersSecondRow] = useState(null);
   const [lettersThirdRow, setLettersThirdRow] = useState(null);
-  // const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // const [theme, setTheme] = useLocalStorage(
-  //   "theme",
-  //   defaultDark ? "dark" : "light"
-  // );
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
 
-  const [themeMode, setThemeModes] = useState("light");
+  // const [themeMode, setThemeModes] = useState("light");
 
   const switchTheme = (e) => {
     e.preventDefault();
-    const newTheme = themeMode === "light" ? "dark" : "light";
-    setThemeModes(newTheme);
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
     // setThemeMode(newTheme);
   };
 
@@ -138,15 +139,17 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   };
 
   return (
-    <div className="changeBack" data-theme={themeMode}>
+    <div className="changeBack" data-theme={theme}>
       {/* Wordle solution = {solution} */}
       <h1>Shtickle (Wordle Clone)</h1>
 
-      <img
-        className="nightModeImg"
-        src={themeMode === "light" ? nightMode : whiteSun}
-        onClick={switchTheme}
-      />
+      <div className="wordleimg">
+        <img
+          className="nightModeImg"
+          src={theme === "light" ? nightMode : whiteSun}
+          onClick={switchTheme}
+        />
+      </div>
       {/* {console.log(solution)} */}
       {/* <button onClick={newGame}>click worlde</button> */}
       <div className="letterWord" style={{ fontSize: " 25px" }}>
