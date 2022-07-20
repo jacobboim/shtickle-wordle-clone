@@ -3,13 +3,17 @@ import "./App.css";
 import Wordle from "./components/Wordle";
 import axios from "axios";
 import useWordle from "./hooks/useWordle";
+import useWordBank from "./hooks/useWordBank";
+
 import nightMode from "./images/nightss.png";
 import useLocalStorage from "use-local-storage";
 
 function App() {
   const [solution, setSolution] = useState(null);
   const [clicked, setClicked] = useState("");
-  const { getNewWord, newGame } = useWordle(solution);
+  const { newGame } = useWordle(solution);
+  const { getNewWord } = useWordBank();
+
   const [newGameClick, setNewGameClick] = useState(false);
   const [nightModes, setNightModes] = useState(false);
   // const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
