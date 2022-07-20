@@ -13,6 +13,10 @@ body {
     /* The hack for Safari */
     height: -webkit-fill-available;
   }
+  .App {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
 }
 
 /* html {
