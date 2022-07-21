@@ -8,7 +8,8 @@ import finalBlack from "../images/finalBlack.gif";
 import finalWhite from "../images/FinalWhite.gif";
 import moonDark from "../images/moonDark.gif";
 import useLocalStorage from "use-local-storage";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Wordle({ solution, nightModes, setThemeMode }) {
   const {
     currentGuess,
@@ -138,10 +139,26 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
     handleKeyUpKeyboards(e);
   };
 
+  const notify = () =>
+    toast.error("Not a Word!", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 800,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div className="changeBack" data-theme={theme}>
       {/* Wordle solution = {solution} */}
       <h1>Shtickle</h1>
+      <div>
+        {/* <button onClick={notify}>Notify!</button> */}
+        <ToastContainer />
+      </div>
+
       <h3 className="madeBy">Made by: Jacob Boim</h3>
 
       <div className="wordleimg">

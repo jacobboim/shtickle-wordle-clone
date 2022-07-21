@@ -1,7 +1,8 @@
 import { useState } from "react";
 import useWordBank from "./useWordBank";
 import axios from "axios";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
   const [currentGuess, setCurrentGuess] = useState("");
@@ -10,7 +11,6 @@ const useWordle = (solution) => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [usedKeys, setUsedKeys] = useState({});
   const [newWordLists, setNewWordLists] = useState(null);
-  const [showModal, setShowModal] = useState(false);
 
   const { wordBankCheck } = useWordBank();
 
@@ -40,24 +40,30 @@ const useWordle = (solution) => {
     return formatedGuess;
   };
 
-  // add a new guess to the guesses state
-  // update the isCorrect state if the guess is correct
-  // add one to the turn state
-
   const popUp = () => {
     return (
       <div>
-        <h1>Not a word</h1>
+        <h1 style={{ fontSize: "100px", color: "yellow" }}>Not a word</h1>
       </div>
     );
   };
   //set modal popup timer to 2 seconds after the game is won
   const popUpTimer = () => {
-    setTimeout(() => {
-      setShowModal(true);
-      popUp();
-    }, 2000);
+    // setShowModal(true);
+    popUp();
   };
+
+  // const toast = () => {
+  //   toast.success("You won!", {
+  //     position: "top-right",
+  //     autoClose: 2000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //   });
+  // };
 
   const addNewGuess = (formattedGuess) => {
     if (currentGuess === solution) {
@@ -100,7 +106,27 @@ const useWordle = (solution) => {
 
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
+  const notVaildWordToast = () =>
+    toast.error("NOT A VALID WORD", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
+  const alreadyUsed = () =>
+    toast.error("ALREADY USED", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const handleKeyUp = ({ key }) => {
     if (key === "Enter") {
       // only add guess if turn is less than 5
@@ -111,13 +137,16 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
-        alert("ALREADY USED");
+        // alert("ALREADY USED");
+        alreadyUsed();
 
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
         console.log("NOT A VALID WORD");
-        alert("NOT A VALID WORD");
+        // alert("NOT A VALID WORD");
+        // After 3 seconds set the show value to false
+        notVaildWordToast();
         return;
       }
       // check word is 5 chars
