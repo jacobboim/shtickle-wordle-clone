@@ -21,7 +21,7 @@ const useWordBank = () => {
       "sugya",
       "shver",
       "gemara",
-      "eitza",
+      "eitzah",
       "gevalt",
       "torah",
       "oyvey",
@@ -100,6 +100,8 @@ const useWordBank = () => {
       "tzadik",
       "nefesh",
       "gabbai",
+      "klutz",
+      "shalom",
     ];
     return words[Math.floor(Math.random() * words.length)];
   };
@@ -123,7 +125,7 @@ const useWordBank = () => {
     "sugya",
     "shver",
     "gemara",
-    "eitza",
+    "eitzah",
     "gevalt",
     "torah",
     "oyvey",
@@ -202,6 +204,8 @@ const useWordBank = () => {
     "tzadik",
     "nefesh",
     "gabbai",
+    "klutz",
+    "shalom",
 
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "aback",

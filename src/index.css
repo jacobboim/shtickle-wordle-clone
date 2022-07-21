@@ -224,10 +224,12 @@ h1 {
   max-width: 500px;
   margin: 20px auto;
   color: var(--button-text);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .firstRow > div {
   background-color: var(--button-background);
-
+  border-radius: 7px;
   width: 40px;
 }
 
@@ -261,11 +263,14 @@ h1 {
   max-width: 500px;
   margin: 20px auto;
   color: var(--button-text);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .secondRow > div {
   /* background-color: #eee; */
   background-color: var(--button-background);
   width: 40px;
+  border-radius: 7px;
 }
 
 .secondRow > div.green {
@@ -300,11 +305,13 @@ h1 {
   color: var(--button-text);
 
   margin: 0px -6px 20px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .thirdRow > div {
   /* background-color: #eee; */
   background-color: var(--button-background);
-
+  border-radius: 7px;
   width: 40px;
 }
 
@@ -339,6 +346,7 @@ h1 {
   /* background-color: #eee; */
   background-color: var(--button-background);
   color: var(--text-primary);
+  border-radius: 7px;
 
   padding: 12px;
 }
@@ -492,7 +500,7 @@ h1 {
   .firstRow > div {
     background-color: var(--button-background);
 
-    width: 30px;
+    width: 33px;
   }
 
   .secondRow > div.green {
@@ -557,6 +565,8 @@ h1 {
     padding: 12px;
     color: var(--text-primary);
     width: 63%;
+    border-radius: 7px;
+
     background-color: var(--button-background);
   }
 
@@ -566,6 +576,8 @@ h1 {
     padding: 12px;
     color: var(--text-primary);
     width: 63%;
+    border-radius: 7px;
+
     background-color: var(--button-background);
   }
   h1 {

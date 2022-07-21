@@ -51,6 +51,7 @@ export default function Keypad({ usedKeys, handleKeyUps, solution }) {
   const handleKeyUpKeyboards = (e) => {
     const key = e.target.innerText;
     // handleKeyUp(key);
+    const lowerCaseKey = key.toString().toLowerCase();
     handleKeyUpKeyboard(key);
 
     // setCurrentGuess(key);

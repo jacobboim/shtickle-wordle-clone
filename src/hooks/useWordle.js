@@ -138,7 +138,7 @@ const useWordle = (solution) => {
 
         return;
       }
-      if (!wordBankCheck.includes(currentGuess)) {
+      if (!wordBankCheck.includes(currentGuess.toLowerCase())) {
         console.log("NOT A VALID WORD");
         // alert("NOT A VALID WORD");
         notVaildWordToast();
@@ -179,7 +179,7 @@ const useWordle = (solution) => {
 
         return;
       }
-      if (!wordBankCheck.includes(currentGuess)) {
+      if (!wordBankCheck.includes(currentGuess.toLowerCase())) {
         console.log("NOT A VALID WORD");
         // alert("NOT A VALID WORD");
         notVaildWordToast();
