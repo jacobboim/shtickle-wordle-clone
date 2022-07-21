@@ -10,10 +10,14 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   body {
+    min-height: 100vh;
+
     /* The hack for Safari */
     height: -webkit-fill-available;
   }
   .App {
+    min-height: 100vh;
+
     /* The hack for Safari */
     height: -webkit-fill-available;
   }
