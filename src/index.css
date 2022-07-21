@@ -225,7 +225,6 @@ h1 {
   max-width: 500px;
   margin: 20px auto;
   color: var(--button-text);
-  text-transform: uppercase;
   font-weight: bold;
 }
 .firstRow > div {
@@ -265,7 +264,6 @@ h1 {
   max-width: 500px;
   margin: 20px auto;
   color: var(--button-text);
-  text-transform: uppercase;
   font-weight: bold;
 }
 .secondRow > div {
@@ -308,7 +306,6 @@ h1 {
   color: var(--button-text);
 
   margin: 0px -6px 20px 20px;
-  text-transform: uppercase;
   font-weight: bold;
 }
 .thirdRow > div {
