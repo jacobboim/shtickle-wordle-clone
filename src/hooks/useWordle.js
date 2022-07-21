@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useWordBank from "./useWordBank";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+// import axios from "axios";
+import { Flip, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
@@ -10,7 +10,6 @@ const useWordle = (solution) => {
   const [history, setHistory] = useState([]); // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false);
   const [usedKeys, setUsedKeys] = useState({});
-  const [newWordLists, setNewWordLists] = useState(null);
 
   const { wordBankCheck } = useWordBank();
 
@@ -38,19 +37,6 @@ const useWordle = (solution) => {
       }
     });
     return formatedGuess;
-  };
-
-  const popUp = () => {
-    return (
-      <div>
-        <h1 style={{ fontSize: "100px", color: "yellow" }}>Not a word</h1>
-      </div>
-    );
-  };
-  //set modal popup timer to 2 seconds after the game is won
-  const popUpTimer = () => {
-    // setShowModal(true);
-    popUp();
   };
 
   // const toast = () => {
@@ -115,6 +101,8 @@ const useWordle = (solution) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
+      transition: Flip,
+      theme: "colored",
     });
 
   const alreadyUsed = () =>
@@ -126,6 +114,8 @@ const useWordle = (solution) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
+      transition: Flip,
+      theme: "colored",
     });
   const handleKeyUp = ({ key }) => {
     if (key === "Enter") {
@@ -219,7 +209,6 @@ const useWordle = (solution) => {
     setUsedKeys({});
   };
 
-  const word = "aaa bbbb ccccc dddddd eeeeeee";
   const getWordLengthsConst = (str) => {
     let len = [];
     let words = str.split(" ");
