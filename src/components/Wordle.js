@@ -4,9 +4,9 @@ import Grid from "./Grid";
 import Keypad from "./Keypad";
 import Modal from "./Modal";
 import axios from "axios";
-import nightMode from "../images/nightss.png";
-import whiteSun from "../images/whiteSun.jpg";
-import whiteSunTwo from "../images/whiteSunTwo.png";
+import finalBlack from "../images/finalBlack.gif";
+import finalWhite from "../images/FinalWhite.gif";
+import moonDark from "../images/moonDark.gif";
 import useLocalStorage from "use-local-storage";
 
 export default function Wordle({ solution, nightModes, setThemeMode }) {
@@ -141,12 +141,13 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   return (
     <div className="changeBack" data-theme={theme}>
       {/* Wordle solution = {solution} */}
-      <h1>Shtickle (Wordle Clone)</h1>
+      <h1>Shtickle</h1>
+      <h3 className="madeBy">Made by: Jacob Boim</h3>
 
       <div className="wordleimg">
         <img
           className="nightModeImg"
-          src={theme === "light" ? nightMode : whiteSun}
+          src={theme === "light" ? finalBlack : finalWhite}
           onClick={switchTheme}
         />
       </div>

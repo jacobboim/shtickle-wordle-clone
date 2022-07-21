@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useWordBank from "./useWordBank";
+import axios from "axios";
 
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
@@ -99,6 +100,7 @@ const useWordle = (solution) => {
 
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
+
   const handleKeyUp = ({ key }) => {
     if (key === "Enter") {
       // only add guess if turn is less than 5
@@ -109,6 +111,8 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
+        alert("ALREADY USED");
+
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
@@ -134,7 +138,6 @@ const useWordle = (solution) => {
       }
     }
   };
-
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
   const handleKeyUpKeyboard = (key) => {
@@ -147,6 +150,8 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
+        alert("ALREADY USED");
+
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
@@ -166,6 +171,7 @@ const useWordle = (solution) => {
       setCurrentGuess((prev) => prev.slice(0, -1));
       return;
     }
+
     if (/^[A-Za-z]$/.test(key)) {
       if (currentGuess.length < solution.length) {
         setCurrentGuess((prev) => prev + key);
