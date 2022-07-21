@@ -26292,6 +26292,7 @@ const useWordBank = () => {
     "shiv",
     "shiva",
     "shive",
+    "shiver",
     "shivy",
     "shivs",
     "shlep",

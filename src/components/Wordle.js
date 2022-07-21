@@ -10,6 +10,8 @@ import moonDark from "../images/moonDark.gif";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.minimal.css";
+
 export default function Wordle({ solution, nightModes, setThemeMode }) {
   const {
     currentGuess,
@@ -176,7 +178,11 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       <h1>Shtickle</h1>
       <div className="toaster">
         {/* <button onClick={notify}>Notify!</button> */}
-        <ToastContainer />
+        <ToastContainer
+          className="not-valid-word-toast"
+          bodyClassName="toast-body"
+          toastClassName="toast-body"
+        />
       </div>
 
       <h3 className="madeBy">Made by: Jacob Boim</h3>

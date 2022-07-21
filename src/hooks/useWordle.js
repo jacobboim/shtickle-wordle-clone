@@ -2,7 +2,8 @@ import { useState, useRef } from "react";
 import useWordBank from "./useWordBank";
 // import axios from "axios";
 import { Flip, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.minimal.css";
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
   const [currentGuess, setCurrentGuess] = useState("");
@@ -110,6 +111,9 @@ const useWordle = (solution) => {
   const notVaildWordToast = () => {
     if (!toast.isActive(toastId.current)) {
       toastId.current = toast.error("NOT A VALID WORD", {
+        className: "not-valid-word-toast",
+        bodyClassName: "toast-body",
+
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1000,
         hideProgressBar: false,
