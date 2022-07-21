@@ -9,6 +9,9 @@ import whiteSun from "../images/whitSvg.png";
 import blueSun from "../images/nightModeSun.png";
 import sunGif from "../images/sunGif.gif";
 import spinningWhite from "../images/goodSping.gif";
+import finalBlack from "../images/finalBlack.gif";
+
+import finalWhite from "../images/FinalWhite.gif";
 
 import whiteSunTwo from "../images/whiteSunTwo.png";
 import useLocalStorage from "use-local-storage";
@@ -151,7 +154,7 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       <div className="wordleimg">
         <img
           className="nightModeImg"
-          src={theme === "light" ? sunGif : spinningWhite}
+          src={theme === "light" ? finalBlack : finalWhite}
           onClick={switchTheme}
         />
       </div>
