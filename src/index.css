@@ -408,6 +408,18 @@ h1 {
     justify-content: center;
     color: var(--text-primary);
   }
+  .row > div {
+    display: block;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #bbb;
+    margin: 4px;
+    text-align: center;
+    line-height: 49px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+  }
   .thirdRow {
     margin: 5px;
     width: 93%;
