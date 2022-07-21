@@ -4,8 +4,11 @@ import Grid from "./Grid";
 import Keypad from "./Keypad";
 import Modal from "./Modal";
 import axios from "axios";
-import nightMode from "../images/nightss.png";
-import whiteSun from "../images/whiteSun.jpg";
+import nightMode from "../images/blackSun.png";
+import whiteSun from "../images/whitSvg.png";
+import blueSun from "../images/nightModeSun.png";
+import sunGif from "../images/sunGif.gif";
+
 import whiteSunTwo from "../images/whiteSunTwo.png";
 import useLocalStorage from "use-local-storage";
 
@@ -147,7 +150,7 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       <div className="wordleimg">
         <img
           className="nightModeImg"
-          src={theme === "light" ? nightMode : whiteSun}
+          src={theme === "light" ? sunGif : blueSun}
           onClick={switchTheme}
         />
       </div>
