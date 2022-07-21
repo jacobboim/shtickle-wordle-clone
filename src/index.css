@@ -101,6 +101,7 @@ h2 {
   position: relative;
   top: -60px;
   left: 171px;
+  cursor: pointer;
 }
 
 /* h1 {
