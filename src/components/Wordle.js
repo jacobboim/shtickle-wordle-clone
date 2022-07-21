@@ -141,7 +141,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   return (
     <div className="changeBack" data-theme={theme}>
       {/* Wordle solution = {solution} */}
-      <h1>Shtickle (Wordle Clone)</h1>
+      <h1>Shtickle</h1>
+      <h3 className="madeBy">Made by: Jacob Boim</h3>
 
       <div className="wordleimg">
         <img

@@ -94,18 +94,36 @@ h2 {
 .nightModeImg {
   width: 42px;
   position: relative;
-  top: -26px;
-  left: 168px;
+  top: -82px;
+  left: 154px;
 }
 
-h1 {
+/* h1 {
   font-size: 1.2em;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   margin: 0 0 -27px 0;
   color: var(--main-title);
+} */
+
+h1 {
+  font-size: 1.2em;
+  padding: 23px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0 0 -23px 0;
+  color: var(--main-title);
 }
 
+.wordleimg {
+  margin: -35px;
+}
+
+.madeBy {
+  font-size: 1.1rem;
+  position: relative;
+  bottom: 19px;
+  color: var(--text-primary);
+}
 .row {
   text-align: center;
   display: flex;
@@ -405,7 +423,7 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .nightModeImg {
-    top: -7px;
+    top: -80px;
   }
   .row {
     text-align: center;
@@ -535,14 +553,24 @@ h1 {
     background-color: var(--button-background);
   }
   h1 {
-    padding: 10px 0;
-    margin: 0 0 -37px 0;
+    padding: 12px 0;
+    padding-bottom: 22px;
+    margin: 0 0 -25px 0;
   }
+}
 
-  .mobileSubmit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96%;
-  }
+.mobileSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+}
+.wordleimg {
+  margin: 0px;
+  margin-bottom: -67px;
+}
+.madeBy {
+  font-size: 1.1rem;
+  position: relative;
+  bottom: 17px;
 }
