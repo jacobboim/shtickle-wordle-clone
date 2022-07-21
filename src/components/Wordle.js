@@ -154,7 +154,7 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
     <div className="changeBack" data-theme={theme}>
       {/* Wordle solution = {solution} */}
       <h1>Shtickle</h1>
-      <div>
+      <div className="toaster">
         {/* <button onClick={notify}>Notify!</button> */}
         <ToastContainer />
       </div>

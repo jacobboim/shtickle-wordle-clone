@@ -94,11 +94,11 @@ const useWordle = (solution) => {
   // if user presses enter, add the new guess
   const notVaildWordToast = () =>
     toast.error("NOT A VALID WORD", {
-      position: toast.POSITION.TOP_CENTER,
+      position: "top-center",
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       transition: Flip,
@@ -111,7 +111,7 @@ const useWordle = (solution) => {
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       transition: Flip,
