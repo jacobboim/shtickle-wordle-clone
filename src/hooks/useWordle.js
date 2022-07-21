@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import useWordBank from "./useWordBank";
 // import axios from "axios";
 import { Flip, toast } from "react-toastify";
@@ -10,6 +10,7 @@ const useWordle = (solution) => {
   const [history, setHistory] = useState([]); // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false);
   const [usedKeys, setUsedKeys] = useState({});
+  const toastId = useRef(null);
 
   const { wordBankCheck } = useWordBank();
 
@@ -90,33 +91,38 @@ const useWordle = (solution) => {
     setCurrentGuess("");
   };
 
-  // handle keyup event & track current guess
-  // if user presses enter, add the new guess
-  const notVaildWordToast = () =>
-    toast.error("NOT A VALID WORD", {
-      position: "top-center",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      transition: Flip,
-      theme: "colored",
-    });
+  const alreadyUsed = () => {
+    if (!toast.isActive(toastId.current)) {
+      toastId.current = toast.error("ALREADY USED", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Flip,
+        theme: "colored",
+      });
+    }
+  };
 
-  const alreadyUsed = () =>
-    toast.error("ALREADY USED", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      transition: Flip,
-      theme: "colored",
-    });
+  const notVaildWordToast = () => {
+    if (!toast.isActive(toastId.current)) {
+      toastId.current = toast.error("NOT A VALID WORD", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Flip,
+        theme: "colored",
+      });
+    }
+  };
+
   const handleKeyUp = ({ key }) => {
     if (key === "Enter") {
       // only add guess if turn is less than 5
@@ -135,7 +141,6 @@ const useWordle = (solution) => {
       if (!wordBankCheck.includes(currentGuess)) {
         console.log("NOT A VALID WORD");
         // alert("NOT A VALID WORD");
-        // After 3 seconds set the show value to false
         notVaildWordToast();
         return;
       }
