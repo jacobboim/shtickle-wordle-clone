@@ -46,7 +46,6 @@ export default function Keypad({ usedKeys, handleKeyUps, solution }) {
     console.log(key);
     console.log(currentGuess, "currentGuess");
   };
-  const alphabet = ["A", "B", "C"];
 
   const handleKeyUpKeyboards = (e) => {
     const key = e.target.innerText;

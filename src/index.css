@@ -481,23 +481,23 @@ h1 {
   }
 
   .thirdRow > div.green {
-    width: 33px;
+    width: 40px;
   }
   .thirdRow > div.yellow {
-    width: 33px;
+    width: 40px;
   }
   .thirdRow > div.grey {
-    width: 33px;
+    width: 40px;
   }
 
   .firstRow > div.green {
-    width: 30px;
+    width: 33px;
   }
   .firstRow > div.yellow {
-    width: 30px;
+    width: 33px;
   }
   .firstRow > div.grey {
-    width: 30px;
+    width: 33px;
   }
   .firstRow > div {
     background-color: var(--button-background);
