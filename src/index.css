@@ -432,7 +432,10 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .nightModeImg {
-    top: -80px;
+    width: 50px;
+    position: relative;
+    top: -82px;
+    left: 140px;
   }
   .row {
     text-align: center;
