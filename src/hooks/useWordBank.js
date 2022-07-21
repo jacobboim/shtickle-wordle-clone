@@ -93,6 +93,13 @@ const useWordBank = () => {
       "shiur",
       "zohar",
       "rabbi",
+      "ruach",
+      "gadlus",
+      "binah",
+      "yesod",
+      "tzadik",
+      "nefesh",
+      "gabbai",
     ];
     return words[Math.floor(Math.random() * words.length)];
   };
@@ -188,6 +195,13 @@ const useWordBank = () => {
     "shiur",
     "zohar",
     "rabbi",
+    "ruach",
+    "gadlus",
+    "binah",
+    "yesod",
+    "tzadik",
+    "nefesh",
+    "gabbai",
 
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "yugoslavia",
