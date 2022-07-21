@@ -179,13 +179,15 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
-        alert("ALREADY USED");
+        // alert("ALREADY USED");
+        alreadyUsed();
 
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
         console.log("NOT A VALID WORD");
-        alert("NOT A VALID WORD");
+        // alert("NOT A VALID WORD");
+        notVaildWordToast();
         return;
       }
       // check word is 5 chars
