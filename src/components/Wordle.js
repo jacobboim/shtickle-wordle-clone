@@ -29,6 +29,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   const [letters, setLetters] = useState(null);
   const [lettersFirstRow, setLettersFirstRow] = useState(null);
   const [lettersSecondRow, setLettersSecondRow] = useState(null);
+  const [lettersFirstRowUpper, setLettersFirstRowUpper] = useState(null);
+  const [lettersSecondRowUpper, setLettersSecondRowUpper] = useState(null);
   const [lettersThirdRow, setLettersThirdRow] = useState(null);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -114,6 +116,24 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       .then((res) => res.data.lettersThirdRow)
       .then((json) => {
         setLettersThirdRow(json);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("./data/db.json")
+      .then((res) => res.data.lettersFirstRowUpper)
+      .then((json) => {
+        setLettersFirstRowUpper(json);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("./data/db.json")
+      .then((res) => res.data.lettersSecondRowUpper)
+      .then((json) => {
+        setLettersSecondRowUpper(json);
       });
   }, []);
 
