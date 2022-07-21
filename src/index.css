@@ -231,6 +231,7 @@ h1 {
   background-color: var(--button-background);
   border-radius: 7px;
   width: 40px;
+  cursor: pointer;
 }
 
 .firstRow > div.green {
@@ -271,6 +272,7 @@ h1 {
   background-color: var(--button-background);
   width: 40px;
   border-radius: 7px;
+  cursor: pointer;
 }
 
 .secondRow > div.green {
@@ -313,6 +315,7 @@ h1 {
   background-color: var(--button-background);
   border-radius: 7px;
   width: 40px;
+  cursor: pointer;
 }
 
 .thirdRow > div.green {
@@ -347,6 +350,7 @@ h1 {
   background-color: var(--button-background);
   color: var(--text-primary);
   border-radius: 7px;
+  cursor: pointer;
 
   padding: 12px;
 }
