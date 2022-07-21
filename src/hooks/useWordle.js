@@ -9,6 +9,7 @@ const useWordle = (solution) => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [usedKeys, setUsedKeys] = useState({});
   const [newWordLists, setNewWordLists] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const { wordBankCheck } = useWordBank();
 
@@ -41,6 +42,22 @@ const useWordle = (solution) => {
   // add a new guess to the guesses state
   // update the isCorrect state if the guess is correct
   // add one to the turn state
+
+  const popUp = () => {
+    return (
+      <div>
+        <h1>Not a word</h1>
+      </div>
+    );
+  };
+  //set modal popup timer to 2 seconds after the game is won
+  const popUpTimer = () => {
+    setTimeout(() => {
+      setShowModal(true);
+      popUp();
+    }, 2000);
+  };
+
   const addNewGuess = (formattedGuess) => {
     if (currentGuess === solution) {
       setIsCorrect(true);
