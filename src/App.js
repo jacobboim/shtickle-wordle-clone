@@ -66,12 +66,7 @@ function App() {
       {/* <button onClick={switchTheme}>
         switch to {themeMode === "light" ? "dark" : "light"} theme
       </button> */}
-      {/* <img
-        src={nightMode}
-        style={{ width: "40px" }}
-        // onClick={setNightMode(true)}
-        onClick={() => setNightModes(true)}
-      /> */}
+
       {solution && (
         <Wordle
           solution={solution}
