@@ -10,6 +10,10 @@ body {
   /* min-height: -webkit-fill-available; */
 }
 
+.App {
+  height: calc(100vh - calc(100vh - 100%));
+}
+
 @supports (-webkit-touch-callout: none) {
   body {
     /* min-height: 100vh; */
@@ -385,17 +389,22 @@ h1 {
 @keyframes flip {
   0% {
     transform: rotateX(0);
-    background: #fff;
+    /* background: white; */
+    background: var(--background);
+
     border-color: #333;
   }
   45% {
     transform: rotateX(90deg);
-    background: white;
+    /* background: white; */
+    background: var(--background);
+
     border-color: #333;
   }
   55% {
     transform: rotateX(90deg);
     background: var(--background);
+
     border-color: var(--border-color);
     color: #eee;
   }
@@ -553,7 +562,7 @@ h1 {
     background-color: var(--button-background);
   }
   h1 {
-    padding: 12px 0;
+    padding: 4px 0;
     padding-bottom: 22px;
     margin: 0 0 -25px 0;
   }

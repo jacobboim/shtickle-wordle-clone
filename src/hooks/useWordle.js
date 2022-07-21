@@ -94,6 +94,8 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
+        alert("ALREADY USED");
+
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
@@ -131,6 +133,8 @@ const useWordle = (solution) => {
       // do not allow duplicate words
       if (history.includes(currentGuess)) {
         console.log("you already tried that word.");
+        alert("ALREADY USED");
+
         return;
       }
       if (!wordBankCheck.includes(currentGuess)) {
