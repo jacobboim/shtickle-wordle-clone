@@ -31,14 +31,9 @@ export default function Row({ guess, currentGuess, solution }) {
   }
 
   if (solution && solution.length === 6) {
-    const handleChange = (e) => {
-      setFname(e.target.value);
-    };
     return (
       <div className="row">
-        <div>
-          {/* <input type="text" value={fname} onChange={handleChange} /> */}
-        </div>
+        <div></div>
         <div></div>
         <div></div>
         <div></div>

@@ -109,6 +109,12 @@ const useWordBank = () => {
       "payis",
       "tamei",
       "pushka",
+      "kesher",
+      "sheker",
+      "shkiah",
+      "posek",
+      "aliyah",
+
     ];
     return words[Math.floor(Math.random() * words.length)];
   };
@@ -220,6 +226,11 @@ const useWordBank = () => {
     "payis",
     "tamei",
     "pushka",
+    "kesher",
+    "sheker",
+    "shkiah",
+    "posek",
+    "aliyah",
 
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "aback",

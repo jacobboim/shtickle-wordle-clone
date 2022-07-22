@@ -153,7 +153,7 @@ button {
   transition: all 0.5s;
   /* background-color: #bbb; */
   all: unset;
-  border: 5px #10172a solid;
+  border: 2px #10172a solid;
   padding: 5px;
   color: var(--play-again);
   cursor: pointer;
@@ -168,7 +168,13 @@ h2 {
   position: relative;
   top: -60px;
   left: 171px;
+  transition: 0.5s;
   cursor: pointer;
+}
+
+.nightModeImg:hover {
+  transform: scale(1.5);
+  /* width: 75px; */
 }
 
 /* h1 {
@@ -188,7 +194,7 @@ h1 {
 }
 
 .wordleimg {
-  margin: -35px;
+  margin: -25px;
   width: 100%;
 }
 

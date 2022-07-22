@@ -7,10 +7,19 @@ import axios from "axios";
 import finalBlack from "../images/finalBlack.gif";
 import finalWhite from "../images/FinalWhite.gif";
 import moonDark from "../images/moonDark.gif";
+import sunSvg from "../images/sunSvg.svg";
+
+import blackSunFilled from "../images/blackSunFilled.svg";
+import whiteSunFilled from "../images/whiteSunFilled.svg";
+import newBlackSunSvg from "../images/newBlackSunSvg.svg";
+import newWhiteSunSvg from "../images/newWhiteSunSvg.svg";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.minimal.css";
+// import indexCSS from "../index.css";
+
+import "../index.scss";
 
 export default function Wordle({ solution, nightModes, setThemeMode }) {
   const {
@@ -189,17 +198,22 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
 
       <div className="wordleimg">
         <img
-          className="nightModeImg"
+          className="sun-icon"
           src={theme === "light" ? finalBlack : finalWhite}
           onClick={switchTheme}
         />
+
+        {/* <img
+          src={theme === "light" ? blackSunFilled : whiteSunFilled}
+          className="sun-icon"
+          onClick={switchTheme}
+        /> */}
       </div>
-      {/* {console.log(solution)} */}
-      {/* <button onClick={newGame}>click worlde</button> */}
-      <div className="letterWord" style={{ fontSize: " 25px" }}>
+
+      {/* <div className="letterWord" style={{ fontSize: " 25px" }}>
         {sixLetters()}
-      </div>
-      {/* <div>Current Guess - {currentGuess}</div> */}
+      </div> */}
+
       <Grid
         currentGuess={currentGuess}
         guesses={guesses}
