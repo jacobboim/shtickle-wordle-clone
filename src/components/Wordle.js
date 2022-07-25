@@ -42,6 +42,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   const [lettersSecondRow, setLettersSecondRow] = useState(null);
   const [lettersFirstRowUpper, setLettersFirstRowUpper] = useState(null);
   const [lettersSecondRowUpper, setLettersSecondRowUpper] = useState(null);
+  const [lettersThirdRowUpper, setLettersThirdRowUpper] = useState(null);
+
   const [lettersThirdRow, setLettersThirdRow] = useState(null);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -148,6 +150,15 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("./data/db.json")
+      .then((res) => res.data.lettersThirdRowUpper)
+      .then((json) => {
+        setLettersThirdRowUpper(json);
+      });
+  }, []);
+
   const sixLetters = () => {
     if (solution.length === 6) {
       return <div>This is a 6 letter word</div>;
@@ -160,10 +171,12 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   console.log(solution);
   const handleKeyUpKeyboards = (e) => {
     const key = e.target.innerText;
-    handleKeyUpKeyboard(key);
+    const lowerCaseKey = key.toLowerCase();
+    // console.log(key.toLowerCase());
+    handleKeyUpKeyboard(lowerCaseKey);
 
     // setCurrentGuess(key);
-    console.log(key);
+    console.log(lowerCaseKey);
   };
 
   const handleEnter = (e) => {
@@ -221,8 +234,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
         solution={solution}
       />
       <div className="firstRow">
-        {lettersFirstRow &&
-          lettersFirstRow.map((l) => {
+        {lettersFirstRowUpper &&
+          lettersFirstRowUpper.map((l) => {
             const color = usedKeys[l.key];
             return (
               <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
@@ -232,8 +245,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
           })}
       </div>
       <div className="secondRow">
-        {lettersSecondRow &&
-          lettersSecondRow.map((l) => {
+        {lettersSecondRowUpper &&
+          lettersSecondRowUpper.map((l) => {
             const color = usedKeys[l.key];
             return (
               <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
@@ -247,8 +260,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
           <h2 className="enterText">Enter</h2>
         </div>
         <div className="thirdRow">
-          {lettersThirdRow &&
-            lettersThirdRow.map((l) => {
+          {lettersThirdRowUpper &&
+            lettersThirdRowUpper.map((l) => {
               const color = usedKeys[l.key];
               return (
                 <div

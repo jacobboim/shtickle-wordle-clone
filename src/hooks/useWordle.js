@@ -128,7 +128,7 @@ const useWordle = (solution) => {
   };
 
   const handleKeyUp = ({ key }) => {
-    if (key === "Enter") {
+    if (key === "Enter" || key == "enter") {
       // only add guess if turn is less than 5
       if (turn > solution.length) {
         console.log("you used all your guesses!");
@@ -169,7 +169,7 @@ const useWordle = (solution) => {
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
   const handleKeyUpKeyboard = (key) => {
-    if (key === "Enter") {
+    if (key === "Enter" || key == "enter") {
       // only add guess if turn is less than 5
       if (turn > solution.length) {
         console.log("you used all your guesses!");
