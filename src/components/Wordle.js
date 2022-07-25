@@ -234,8 +234,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
         solution={solution}
       />
       <div className="firstRow">
-        {lettersFirstRowUpper &&
-          lettersFirstRowUpper.map((l) => {
+        {lettersFirstRow &&
+          lettersFirstRow.map((l) => {
             const color = usedKeys[l.key];
             return (
               <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
@@ -245,8 +245,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
           })}
       </div>
       <div className="secondRow">
-        {lettersSecondRowUpper &&
-          lettersSecondRowUpper.map((l) => {
+        {lettersSecondRow &&
+          lettersSecondRow.map((l) => {
             const color = usedKeys[l.key];
             return (
               <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
@@ -260,8 +260,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
           <h2 className="enterText">Enter</h2>
         </div>
         <div className="thirdRow">
-          {lettersThirdRowUpper &&
-            lettersThirdRowUpper.map((l) => {
+          {lettersThirdRow &&
+            lettersThirdRow.map((l) => {
               const color = usedKeys[l.key];
               return (
                 <div
