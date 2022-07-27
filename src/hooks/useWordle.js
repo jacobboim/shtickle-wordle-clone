@@ -115,7 +115,7 @@ const useWordle = (solution) => {
         bodyClassName: "toast-body",
 
         position: toast.POSITION.TOP_CENTER,
-        autoClose: 1000,
+        autoClose: 100000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
