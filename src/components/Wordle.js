@@ -7,10 +7,19 @@ import axios from "axios";
 import finalBlack from "../images/finalBlack.gif";
 import finalWhite from "../images/FinalWhite.gif";
 import moonDark from "../images/moonDark.gif";
+import sunSvg from "../images/sunSvg.svg";
+
+import blackSunFilled from "../images/blackSunFilled.svg";
+import whiteSunFilled from "../images/whiteSunFilled.svg";
+import newBlackSunSvg from "../images/newBlackSunSvg.svg";
+import newWhiteSunSvg from "../images/newWhiteSunSvg.svg";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.minimal.css";
+// import indexCSS from "../index.css";
+
+import "../index.scss";
 
 export default function Wordle({ solution, nightModes, setThemeMode }) {
   const {
@@ -33,6 +42,8 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   const [lettersSecondRow, setLettersSecondRow] = useState(null);
   const [lettersFirstRowUpper, setLettersFirstRowUpper] = useState(null);
   const [lettersSecondRowUpper, setLettersSecondRowUpper] = useState(null);
+  const [lettersThirdRowUpper, setLettersThirdRowUpper] = useState(null);
+
   const [lettersThirdRow, setLettersThirdRow] = useState(null);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -139,6 +150,15 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("./data/db.json")
+      .then((res) => res.data.lettersThirdRowUpper)
+      .then((json) => {
+        setLettersThirdRowUpper(json);
+      });
+  }, []);
+
   const sixLetters = () => {
     if (solution.length === 6) {
       return <div>This is a 6 letter word</div>;
@@ -151,10 +171,12 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
   console.log(solution);
   const handleKeyUpKeyboards = (e) => {
     const key = e.target.innerText;
-    handleKeyUpKeyboard(key);
+    const lowerCaseKey = key.toLowerCase();
+    // console.log(key.toLowerCase());
+    handleKeyUpKeyboard(lowerCaseKey);
 
     // setCurrentGuess(key);
-    console.log(key);
+    console.log(lowerCaseKey);
   };
 
   const handleEnter = (e) => {
@@ -189,17 +211,22 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
 
       <div className="wordleimg">
         <img
-          className="nightModeImg"
+          className="sun-icon"
           src={theme === "light" ? finalBlack : finalWhite}
           onClick={switchTheme}
         />
+
+        {/* <img
+          src={theme === "light" ? blackSunFilled : whiteSunFilled}
+          className="sun-icon"
+          onClick={switchTheme}
+        /> */}
       </div>
-      {/* {console.log(solution)} */}
-      {/* <button onClick={newGame}>click worlde</button> */}
-      <div className="letterWord" style={{ fontSize: " 25px" }}>
+
+      {/* <div className="letterWord" style={{ fontSize: " 25px" }}>
         {sixLetters()}
-      </div>
-      {/* <div>Current Guess - {currentGuess}</div> */}
+      </div> */}
+
       <Grid
         currentGuess={currentGuess}
         guesses={guesses}

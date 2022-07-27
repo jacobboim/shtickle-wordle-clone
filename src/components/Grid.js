@@ -10,7 +10,7 @@ export default function Grid({ currentGuess, guesses, turn, solution }) {
             <Row key={i} currentGuess={currentGuess} solution={solution} />
           );
         }
-        return <Row key={i} guess={g} />;
+        return <Row key={i} guess={g} solution={solution} />;
       })}
     </div>
   );
