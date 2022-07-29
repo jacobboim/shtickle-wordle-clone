@@ -156,7 +156,7 @@ const useWordle = (solution) => {
       const formattedGuess = formatGuess();
       addNewGuess(formattedGuess);
     }
-    if (key === "Backspace") {
+    if (key === "Backspace" || key == "backspace") {
       setCurrentGuess((prev) => prev.slice(0, -1));
       return;
     }
@@ -197,7 +197,7 @@ const useWordle = (solution) => {
       const formattedGuess = formatGuess();
       addNewGuess(formattedGuess);
     }
-    if (key === "Backspace") {
+    if (key === "Backspace" || key == "backspace") {
       setCurrentGuess((prev) => prev.slice(0, -1));
       return;
     }
