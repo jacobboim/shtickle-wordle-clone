@@ -8,6 +8,7 @@
   position: relative;
   left: 169px;
   top: -62px;
+  cursor: pointer;
 
   .ray,
   .circle {
@@ -30,6 +31,7 @@
   .sun-icon {
     width: 40px;
     margin: 0 auto;
+    cursor: pointer;
     display: block;
     animation: rotateMobile 10s 0s linear infinite;
     fill: black;

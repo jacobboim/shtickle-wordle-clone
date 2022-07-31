@@ -32,9 +32,9 @@ body {
   }
 }
 
-html {
+/* html {
   height: calc(100vh - calc(100vh - 100%));
-}
+} */
 
 :root {
   --background: white;
@@ -221,7 +221,48 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
+  /* animation: slide-inLeft 1s; */
 }
+
+/* .slideHelp {
+  animation: slide-inLeft 6s;
+} */
+
+.slideHelp > div:nth-child(1) {
+  animation: slide-inLeft 1s;
+}
+.slideHelp > div:nth-child(2) {
+  animation: slide-inLeft 1.3s;
+}
+
+.slideHelp > div:nth-child(3) {
+  animation: slide-inLeft 1.5s;
+}
+.slideHelp > div:nth-child(4) {
+  animation: slide-inLeft 1.7s;
+}
+.slideHelp > div:nth-child(5) {
+  animation: slide-inLeft 1.9s;
+}
+
+.slideHelp > div:nth-child(6) {
+  animation: slide-inLeft 2s;
+}
+
+/* .slideInLeft > row div:nth-child(2) {
+  animation-delay: 2.2s;
+} */
+
+/* .row > div:nth-child(2) {
+  animation-delay: 2.2s;
+}
+.row > div:nth-child(3) {
+  animation-delay: 5.4s;
+}
+.row > div:nth-child(4) {
+  animation-delay: 7.6s;
+} */
+
 .row > div.green {
   --background: #5ac85a;
   --border-color: #5ac85a;
@@ -478,6 +519,10 @@ h1 {
 .backspaceMobile {
   display: none;
 }
+
+.keyboardAnimation {
+  animation: slide-in 1s;
+}
 /* keyframe animations */
 @keyframes flip {
   0% {
@@ -520,6 +565,24 @@ h1 {
   100% {
     transform: scale(1);
     border-color: var(--key-frame-border-color);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translatey(363%);
+  }
+  to {
+    transform: translatey(0%);
+  }
+}
+
+@keyframes slide-inLeft {
+  from {
+    transform: translateX(-563%);
+  }
+  to {
+    transform: translateX(0%);
   }
 }
 

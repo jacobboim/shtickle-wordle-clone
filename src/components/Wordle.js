@@ -233,35 +233,11 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
         turn={turn}
         solution={solution}
       />
-      <div className="firstRow">
-        {lettersFirstRow &&
-          lettersFirstRow.map((l) => {
-            const color = usedKeys[l.key];
-            return (
-              <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
-                {l.key}
-              </div>
-            );
-          })}
-      </div>
-      <div className="secondRow">
-        {lettersSecondRow &&
-          lettersSecondRow.map((l) => {
-            const color = usedKeys[l.key];
-            return (
-              <div key={l.key} className={color} onClick={handleKeyUpKeyboards}>
-                {l.key}
-              </div>
-            );
-          })}
-      </div>
-      <div className="handleEnterwidth">
-        <div className="Enter" onClick={handleEnter}>
-          <h2 className="enterText">Enter</h2>
-        </div>
-        <div className="thirdRow">
-          {lettersThirdRow &&
-            lettersThirdRow.map((l) => {
+
+      <div className="keyboardAnimation">
+        <div className="firstRow">
+          {lettersFirstRow &&
+            lettersFirstRow.map((l) => {
               const color = usedKeys[l.key];
               return (
                 <div
@@ -274,17 +250,52 @@ export default function Wordle({ solution, nightModes, setThemeMode }) {
               );
             })}
         </div>
-        <div className="backSpaceWidth" onClick={handleEnter}>
-          <h2 className="enterText">Backspace</h2>
+        <div className="secondRow">
+          {lettersSecondRow &&
+            lettersSecondRow.map((l) => {
+              const color = usedKeys[l.key];
+              return (
+                <div
+                  key={l.key}
+                  className={color}
+                  onClick={handleKeyUpKeyboards}
+                >
+                  {l.key}
+                </div>
+              );
+            })}
         </div>
-      </div>
-      <div>
-        <div className="mobileSubmit">
-          <div className="enterMobile" onClick={handleEnter}>
-            <h2 className="enterTextMobile">Enter</h2>
+        <div className="handleEnterwidth">
+          <div className="Enter" onClick={handleEnter}>
+            <h2 className="enterText">Enter</h2>
           </div>
-          <div className="backspaceMobile" onClick={handleEnter}>
-            <h2 className="backTextMobile">Backspace</h2>
+          <div className="thirdRow">
+            {lettersThirdRow &&
+              lettersThirdRow.map((l) => {
+                const color = usedKeys[l.key];
+                return (
+                  <div
+                    key={l.key}
+                    className={color}
+                    onClick={handleKeyUpKeyboards}
+                  >
+                    {l.key}
+                  </div>
+                );
+              })}
+          </div>
+          <div className="backSpaceWidth" onClick={handleEnter}>
+            <h2 className="enterText">Backspace</h2>
+          </div>
+        </div>
+        <div>
+          <div className="mobileSubmit">
+            <div className="enterMobile" onClick={handleEnter}>
+              <h2 className="enterTextMobile">Enter</h2>
+            </div>
+            <div className="backspaceMobile" onClick={handleEnter}>
+              <h2 className="backTextMobile">Backspace</h2>
+            </div>
           </div>
         </div>
       </div>

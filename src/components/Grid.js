@@ -3,11 +3,13 @@ import Row from "./Row";
 
 export default function Grid({ currentGuess, guesses, turn, solution }) {
   return (
-    <div>
+    <div className="slideHelp">
       {guesses.map((g, i) => {
         if (turn === i) {
           return (
-            <Row key={i} currentGuess={currentGuess} solution={solution} />
+            <div>
+              <Row key={i} currentGuess={currentGuess} solution={solution} />
+            </div>
           );
         }
         return <Row key={i} guess={g} solution={solution} />;
