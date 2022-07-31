@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Row from "./Row";
 
 export default function Grid({ currentGuess, guesses, turn, solution }) {
+  // use state for componentDidMount
+  const [mount, setMount] = useState(false);
+
+  useEffect(() => {
+    setMount(true);
+    setTimeout(() => {
+      setMount(false);
+    }, 2500);
+
+    console.log(mount);
+  }, []);
   return (
-    <div>
+    <div className={mount ? "slideHelp" : ""}>
       {guesses.map((g, i) => {
         if (turn === i) {
           return (
