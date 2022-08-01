@@ -114,12 +114,38 @@ const useWordBank = () => {
       "shkiah",
       "posek",
       "aliyah",
-
+      "kodesh",
+      "aufruf",
+      "avodah",
+      "avrech",
+      "baruch",
+      "bochur",
+      "charif",
+      "chaver",
+      "chazer",
+      "chazan",
+      "chesed",
+      "chevra",
+      "cohen",
+      "davka",
     ];
     return words[Math.floor(Math.random() * words.length)];
   };
 
   const wordBankCheck = [
+    "baruch",
+    "bochur",
+    "davka",
+    "chazan",
+    "cohen",
+    "chesed",
+    "chaver",
+    "chevra",
+    "chazer",
+    "avodah",
+    "charif",
+    "avrech",
+    "aufruf",
     "kugel",
     "latke",
     "zimun",
@@ -231,6 +257,7 @@ const useWordBank = () => {
     "shkiah",
     "posek",
     "aliyah",
+    "kodesh",
 
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "aback",
