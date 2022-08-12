@@ -13,6 +13,7 @@ import blackSunFilled from "../images/blackSunFilled.svg";
 import whiteSunFilled from "../images/whiteSunFilled.svg";
 import newBlackSunSvg from "../images/newBlackSunSvg.svg";
 import newWhiteSunSvg from "../images/newWhiteSunSvg.svg";
+import s from "../images/My project-1_adobe_express.svg";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
